@@ -1,13 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head><title>Login</title></head>
-<body>
-  <h2>Login</h2>
-  <form method="POST" action="/login">
-    <input name="email" placeholder="Email" required><br>
-    <input name="password" type="password" placeholder="Password" required><br>
-    <button type="submit">Login</button>
-  </form>
-  <p><a href="/register">Registrasi</a> | <a href="/forgot">Lupa Password?</a></p>
-</body>
-</html>
+<h3 class="text-center fw-bold mb-4">
+    <i class="fas fa-user-circle text-primary me-2"></i>Selamat Datang
+</h3>
+<p class="text-center text-muted mb-4">Masuk ke akun Anda untuk melanjutkan</p>
+
+<form method="POST" action="/login">
+    <div class="mb-3">
+        <label for="email" class="form-label fw-semibold">Alamat Email</label>
+        <div class="input-group">
+            <span class="input-group-text bg-light"><i class="fas fa-envelope text-secondary"></i></span>
+            <input type="email" class="form-control" id="email" name="email" placeholder="nama@email.com" required>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label fw-semibold">Password</label>
+        <div class="input-group">
+            <span class="input-group-text bg-light"><i class="fas fa-lock text-secondary"></i></span>
+            <input type="password" class="form-control" id="password" name="password" placeholder="••••••••" required>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary w-100 fw-bold">
+        <i class="fas fa-sign-in-alt me-2"></i>Login
+    </button>
+</form>
+
+<div class="mt-4 text-center">
+    <p class="mb-1">Belum punya akun? <a href="/register" class="text-decoration-none">Daftar Sekarang</a></p>
+    <a href="/forgot" class="text-decoration-none small text-muted">Lupa Password?</a>
+</div>

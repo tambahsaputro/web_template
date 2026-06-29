@@ -1,14 +1,35 @@
-<!DOCTYPE html>
-<html>
-<head><title>Register</title></head>
-<body>
-  <h2>Registrasi</h2>
-  <form method="POST" action="/register">
-    <input name="name" placeholder="Nama" required><br>
-    <input name="email" placeholder="Email" required><br>
-    <input name="password" type="password" placeholder="Password" required><br>
-    <button type="submit">Daftar</button>
-  </form>
-  <p>Sudah punya akun? <a href="/login">Login</a></p>
-</body>
-</html>
+<h3 class="text-center fw-bold mb-4">
+    <i class="fas fa-user-plus text-primary me-2"></i>Daftar Akun
+</h3>
+<p class="text-center text-muted mb-4">Isi data di bawah untuk mendaftar</p>
+
+<form method="POST" action="/register">
+    <div class="mb-3">
+        <label for="name" class="form-label fw-semibold">Nama Lengkap</label>
+        <div class="input-group">
+            <span class="input-group-text bg-light"><i class="fas fa-user text-secondary"></i></span>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Nama Anda" required>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label fw-semibold">Alamat Email</label>
+        <div class="input-group">
+            <span class="input-group-text bg-light"><i class="fas fa-envelope text-secondary"></i></span>
+            <input type="email" class="form-control" id="email" name="email" placeholder="nama@email.com" required>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label fw-semibold">Password</label>
+        <div class="input-group">
+            <span class="input-group-text bg-light"><i class="fas fa-lock text-secondary"></i></span>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Minimal 6 karakter" required>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary w-100 fw-bold">
+        <i class="fas fa-user-check me-2"></i>Daftar
+    </button>
+</form>
+
+<div class="mt-4 text-center">
+    <p class="mb-0">Sudah punya akun? <a href="/login" class="text-decoration-none">Login di sini</a></p>
+</div>
