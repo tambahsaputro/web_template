@@ -23,7 +23,7 @@ router.get('/reset/:token', async (req, res) => {
 router.post('/register', async (req, res) => {
   try {
     const { name, email, password } = req.body;
-    await User.create({ name, email, password });
+    await User.create({ name, email, password, role: 'user' });
     res.redirect('/login');
   } catch (err) {
     res.send('Email sudah terdaftar atau input tidak valid');
@@ -37,7 +37,7 @@ router.post('/login', async (req, res) => {
     return res.send('Email atau password salah');
   }
 
-  const token = jwt.sign({ id: user.id, email: user.email }, process.env.JWT_SECRET, { expiresIn: '1d' });
+  const token = jwt.sign({ id: user.id, email: user.email, role: user.role }, process.env.JWT_SECRET, { expiresIn: '1d' });
   res.cookie('token', token, { httpOnly: true });
   res.redirect('/dashboard');
 });

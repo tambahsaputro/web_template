@@ -1,0 +1,31 @@
+<div class="mb-4">
+  <h4><i class="fas fa-user-edit me-2"></i>Edit User</h4>
+</div>
+
+<div class="card shadow-sm">
+  <div class="card-body">
+    <form method="POST" action="/users/edit/<%= user.id %>">
+      <div class="mb-3">
+        <label class="form-label">Nama Lengkap</label>
+        <input type="text" name="name" class="form-control" value="<%= user.name %>" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" name="email" class="form-control" value="<%= user.email %>" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Password (kosongkan jika tidak diubah)</label>
+        <input type="password" name="password" class="form-control" placeholder="Kosongkan jika tidak diubah">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Role</label>
+        <select name="role" class="form-select">
+          <option value="user" <%= user.role === 'user' ? 'selected' : '' %>>User</option>
+          <option value="admin" <%= user.role === 'admin' ? 'selected' : '' %>>Admin</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-warning"><i class="fas fa-save me-1"></i>Update</button>
+      <a href="/users" class="btn btn-secondary">Batal</a>
+    </form>
+  </div>
+</div>
